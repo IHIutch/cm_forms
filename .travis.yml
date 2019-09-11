@@ -15,6 +15,7 @@ jobs:
         target-branch: gh-pages
         name: Travis Deployment Bot
         skip_cleanup: true
+        github_token: "$GITHUB_TOKEN"
         fqdn: cmbuf.jbhutch.com
         on:
           branch: master
