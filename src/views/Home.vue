@@ -23,7 +23,7 @@
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
-          @click="sendMessage()"
+          @click="sendToSlack()"
         >
           Submit
         </button>
@@ -127,24 +127,22 @@ export default {
     }
   },
   methods: {
-    sendMessage() {
-      // Default options are marked with *
+    sendToSlack() {
+      this.message.username = "Speaker Form";
+
       return fetch(
         "https://hooks.slack.com/services/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",
         {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          // mode: "cors", // no-cors, cors, *same-origin
+          method: "POST",
           headers: {
             Accept: "application/json, text/plain, */*"
-            // 'Content-type': 'application/json'
           },
-          body: JSON.stringify(this.message) // body data type must match "Content-Type" header
+          body: JSON.stringify(this.message)
         }
-      ).then(response => response.json()); // parses JSON response into native JavaScript objects
+      ).then(function(res) {
+        console.log(res.status + ", " + res.statusText);
+      });
     }
-  },
-  created() {
-    console.log(JSON.stringify(this.message));
   }
 };
 </script>
