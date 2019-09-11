@@ -115,14 +115,8 @@ export default {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: "*" + this.formData[idx].label + "*"
-          }
-        });
-        arr.push({
-          type: "section",
-          text: {
-            type: "mrkdwn",
-            text: this.formData[idx].value
+            text:
+              "*" + this.formData[idx].label + "* \n" + this.formData[idx].value
           }
         });
       });
