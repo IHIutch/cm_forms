@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-xl m-auto mt-12 mb-12">
+  <div class="max-w-xl m-auto mt-12 mb-12 font-sans">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div v-for="(field, index) in formData" :key="index" class="mb-4">
         <label
