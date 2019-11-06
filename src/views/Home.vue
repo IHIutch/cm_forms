@@ -130,18 +130,16 @@ export default {
     sendToSlack() {
       this.message.username = "Speaker Form";
 
-      return fetch(
-        "https://hooks.slack.com/services/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",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json, text/plain, */*"
-          },
-          body: JSON.stringify(this.message)
-        }
-      ).then(function(res) {
-        console.log(res.status + ", " + res.statusText);
+      return fetch(process.env.VUE_APP_SLACK_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*"
+        },
+        body: JSON.stringify(this.message)
       });
+      // .then(function(res) {
+      //   console.log(res.status + ", " + res.statusText);
+      // });
     }
   }
 };
