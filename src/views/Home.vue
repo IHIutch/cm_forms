@@ -84,8 +84,8 @@ export default {
         },
         phone: {
           id: "phone",
-          label: "Can we get your phone number?",
-          placeholder: "Can we get your phone number?",
+          label: "Can we get your cell phone number?",
+          placeholder: "Can we get your cell phone number?",
           helperText: "",
           value: ""
         },
